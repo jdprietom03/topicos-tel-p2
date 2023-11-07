@@ -183,8 +183,6 @@ The information and parameters of the project criteria are in the teacher's doma
 12. Finally, we save changes, go to our browser, and access using our created DNS but via https. Example: https://my-domain.example
        ![My first Kubernetes](https://github.com/Jguerra47/jsguerrah-st0263/assets/61121948/ce038c07-305d-4d8e-bd92-c7808dda2a06)
 
-Please note that if the images are not publicly available or the links are incorrect, they will not display as expected. Make sure to verify the image URLs and their accessibility.
-
 
 
 
