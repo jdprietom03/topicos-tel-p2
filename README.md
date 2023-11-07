@@ -158,7 +158,7 @@ The information and parameters of the project criteria are in the teacher's doma
     ![Mi primer kubernete](https://github.com/Jguerra47/jsguerrah-st0263/assets/61121948/ce038c07-305d-4d8e-bd92-c7808dda2a06)
 
 # How to Set Up SSL Certificate with ACM
-1. Once we have our DNS Name, we will use a domain name registration service to register the DNS of our Load Balancer. Example: NameCheap
+1. Once we have our DNS Name, we will use a domain name registration service to register the DNS of our Load Balancer. Example: NameCheap.
       ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/15c96133-69df-45a8-b5ba-2b75cb13a97c)
 2. After securing our DNS (proyecto2.example), we go to AWS's `Certificate Manager` service:
       ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/a51bd90d-7334-49dd-9b43-ff96f5940be4)
