@@ -157,3 +157,42 @@ The information and parameters of the project criteria are in the teacher's doma
 
     ![Mi primer kubernete](https://github.com/Jguerra47/jsguerrah-st0263/assets/61121948/ce038c07-305d-4d8e-bd92-c7808dda2a06)
 
+# How to Set Up SSL Certificate with ACM
+1. Once we have our DNS Name, we will use a domain name registration service to register the DNS of our Load Balancer. Example: NameCheap
+      ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/15c96133-69df-45a8-b5ba-2b75cb13a97c)
+2. After securing our DNS (proyecto2.example), we go to AWS's `Certificate Manager` service:
+      ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/a51bd90d-7334-49dd-9b43-ff96f5940be4)
+3. We will click on the `Request` option to ask for a certificate for our DNS:
+      ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/e27159a8-8615-4141-91ff-d839e3f9d62d)
+4. We opt to request a public certificate and then click on next:
+      ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/df459dce-4859-40d1-8e7d-0df58676c927)
+5. We enter our assigned DNS in the configuration and finally click on request:
+      ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/fe41cd9a-c6cb-4760-9678-950f0ef15b8d)
+6. Next, we will go back to our domain name registration service and register our `CName name` and `CName Value`. This information can be found in our certificate requested in ACM:
+      ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/4fc37740-b8a1-4f44-be60-4b6179ad7657)
+7. Once our certificate is successfully created, we have finished this first part.
+      ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/49a1e99d-397b-4dfd-ab01-38aeabb19e54)
+8. The next step is to return to `EC2 >> Load Balancer` and open our Load Balancer:
+      ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/016542c4-c622-4f7c-9dfb-04edf2325675)
+9. Then we will go to Listeners >> Manage Listeners:
+       ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/c7900ad1-2509-4f90-86f8-9f45dd912697)
+10. Next, we will remove the TCP Port 443 configuration and create a new one for the HTTPS protocol. It's important that the `Instance port` of this new rule matches the one defined for TCP Port 80.
+       ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/9a8423f6-853c-45ad-b083-3a6957ba1526)
+11. In our new rule, under the `Default SSL/TLS Certificate` attribute, we will assign the certificate we created earlier:
+       ![image](https://github.com/jdprietom03/topicos-tel-p2/assets/80794157/edfbaf25-03ac-4e4b-95ce-ccebf12602c2)
+12. Finally, we save changes, go to our browser, and access using our created DNS but via https. Example: https://my-domain.example
+       ![My first Kubernetes](https://github.com/Jguerra47/jsguerrah-st0263/assets/61121948/ce038c07-305d-4d8e-bd92-c7808dda2a06)
+
+Please note that if the images are not publicly available or the links are incorrect, they will not display as expected. Make sure to verify the image URLs and their accessibility.
+
+
+
+
+
+
+
+
+
+   
+
+
